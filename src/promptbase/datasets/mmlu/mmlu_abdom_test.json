@@ -1,0 +1,13 @@
+[
+    {
+        "id": 25898584,
+        "question": "Provide the most likely final diagnosis for the following patient. A patient with a history of diverticulosis presents with lower abdominal pain, worsened over 3 days, fever to 102.3, chills, nausea, vomiting, decreased PO intake, and no BMs x3 days. Physical exam shows soft, non-tender abdomen. Laboratory results: elevated WBC count. CT abdomen reveals a dilated, fluid-filled, hyperemic appendix with an appendicolith, surrounding inflammation, and stranding. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "A"
+      }
+]

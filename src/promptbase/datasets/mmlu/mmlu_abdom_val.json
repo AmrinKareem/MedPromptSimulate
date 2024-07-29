@@ -1,0 +1,91 @@
+[
+    {
+    "id": 21762039,
+    "question": "Provide the most likely final diagnosis for the following patient. An otherwise healthy man presents with acute onset diffuse abdominal pain, moderate nausea but no emesis. The abdominal examination shows tenderness in the periumbilical and RLQ without rebound or guarding. Laboratory results reveal WBC 8.0 K/uL, elevated hemoglobin and hematocrit. CT abdomen shows an appendicolith and a markedly dilated appendix with surrounding fat stranding. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 23352147,
+    "question": "Provide the most likely final diagnosis for the following patient. An elderly female with a history of hypertension, mitral valve prolapse, and macular degeneration presents with right upper quadrant pain that radiates to her back. She denies vomiting and had pizza as her last meal. Physical exam shows tenderness in the RUQ without rebound or guarding. Lab results reveal elevated white blood cells and clear urine with moderate leukocytes. Ultrasound reveals a nonmobile gallstone in the gallbladder neck with positive sonographic Murphy's sign. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 26078032,
+    "question": "Provide the most likely final diagnosis for the following patient. A male with a history of kidney cancer, TCC of the bladder, and newly diagnosed pancreatic cancer presents with worsening diffuse epigastric pain, diarrhea, new weakness, abdominal pain worsening with eating, darker urine, weight loss, anorexia, elevated lipase, and elevated WBC. On examination, he has LLQ tenderness, diminished bowel sounds, and diffused ecchymoses. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 21807759,
+    "question": "Provide the most likely final diagnosis for the following patient. A patient with a history of prostate cancer presents with a 2-day history of abdominal pain that started with a periumbilical burning sensation and radiated to the right lower quadrant. There is mild right lower quadrant tenderness and guarding on physical examination. Laboratory results show an elevated white blood cell count. CT abdomen reveals a hyperemic dilated appendix with a proximal appendicolith and adjacent cecal wall thickening. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 22221574,
+    "question": "Provide the most likely final diagnosis for the following patient. An elderly male with a history of RLQ pain persisting for a week, hypertension, hyperlipidemia, hepatitis C, and benign prostatic hyperplasia (BPH). He presents with elevated white blood cell count and CT findings showing an enlarged appendix, mucosal hyperenhancement, significant fat stranding, and fluid changes in the pelvis. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 25323578,
+    "question": "Provide the most likely final diagnosis for the following patient. A  patient with complex medical history presents with worsening left-sided weakness, left leg pain, and left hand cramping. Labs showed elevated INR, high glucose, and elevated creatinine levels. Imaging revealed a surgically absent gallbladder and a cyst in the right kidney. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 25696441,
+    "question": "Provide the most likely final diagnosis for the following patient. A patient presents with one day of diffuse, crampy abdominal pain that later became more focal and localized to the right lower quadrant. The patient also experienced diffuse pain, watery diarrhea, tenesmus, nausea, vomiting, and dry heaves. Laboratory results show an elevated white blood cell count. CT abdomen reveals a dilated retrocecal appendix with surrounding fat stranding and an appendicolith. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 29768034,
+    "question": "Provide the most likely final diagnosis for the following patient. A patient with a history significant for angina, gout, hypothyroidism, hypertension, COPD, BPH, and depression presents with 10 days without a bowel movement or flatus, nausea and vomiting. The patient had a dark colored bowel movement 10 days prior to admission with diffuse abdominal discomfort worsening after eating. Initial vitals in the emergency department were T 98.1, HR 91, BP 139/89, SaO2 98% on room air. Laboratory results showed transaminitis, elevated lipase, and elevated creatinine. CT abdomen showed no acute intra-abdominal process. What is the final diagnosis for this patient?",
+    "answer_choices": {
+      "A": "Appendicitis",
+      "B": "Cholecystitis",
+      "C": "Diverticulitis",
+      "D": "Pancreatitis"
+    },
+    "correct_answer": "D"
+  }
+
+]

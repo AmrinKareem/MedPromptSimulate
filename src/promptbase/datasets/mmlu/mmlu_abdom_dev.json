@@ -1,0 +1,57 @@
+[
+    {
+        "id": 23219752,
+        "question": "Provide the most likely final diagnosis for the following patient. A patient with several days of RUQ pain worsened after fatty meals, resolved overnight, returned after different meals, with subjective fevers, chills, and nausea. Laboratory results show elevated white blood cell count and ultrasound reveals gallbladder distension, wall edema, and small stones/polyps. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "id": 21566781,
+        "question": "Provide the most likely final diagnosis for the following patient. A patient with a history of asthma presents with 2 days of abdominal pain that started in her lower abdomen and localized to her right lower quadrant. She had a low-grade fever, pain with urination, and no vomiting. Physical examination revealed tenderness in the right lower quadrant and right upper quadrant. Laboratory results showed a white blood cell count within normal range. CT abdomen showed an enlarged appendix with mild surrounding inflammation. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "A"
+      },
+      {
+        "id": 27444362,
+        "question": "Provide the most likely final diagnosis for the following patient. A woman with abdominal pain, 18lb weight loss over the last couple of months, early satiety, and nausea for 5 weeks. Laboratory tests show elevated white blood cells, low hemoglobin, low hematocrit, normal platelet count, and normal liver function tests. Imaging reveals a distended gallbladder with wall thickening and presence of a stent in the pancreas. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "id": 29061819,
+        "question": "Provide the most likely final diagnosis for the following patient. A ___ year old male presents with abdominal pain, vomiting, diarrhea, and decreased flatus. He has a history of Crohn's disease and is currently on medications for the same. Physical examination shows diffuse tenderness in the abdomen. Laboratory results reveal an elevated WBC count. Imaging findings show a dilated appendix with a hyperenhancing wall, adjacent fat stranding, and appendicoliths. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "A"
+      },
+      {
+        "id": 27243607,
+        "question": "Provide the most likely final diagnosis for the following patient. A patient with a history of seizure disorder and abdominal pain presents with epigastric pain extending to the right lower quadrant, denied nausea, vomiting, or fevers. Physical examination shows tenderness in the epigastric area and RLQ with no rebound tenderness. Laboratory results reveal elevated white blood cell count. CT abdomen reveals an enlarged appendix with surrounding inflammation but no extraluminal air or drainable collection. What is the final diagnosis for this patient?",
+        "answer_choices": {
+          "A": "Appendicitis",
+          "B": "Cholecystitis",
+          "C": "Diverticulitis",
+          "D": "Pancreatitis"
+        },
+        "correct_answer": "A"
+      }
+]
