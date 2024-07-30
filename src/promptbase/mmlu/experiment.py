@@ -1,7 +1,7 @@
 import traceback
 from functools import partial
 import re
-from globals import record, experience
+from .globals import record, experience
 import torch
 
 from .problem_utils import *
@@ -65,12 +65,27 @@ def prepare_options(options):
     if "examples" not in options:
         options["examples"] = []
 
+############################### NEEDS TO BE ABLE TO LOAD PROBLEMS FROM A LIST OF FILES################################
+    if isinstance(options["examples"], list):
+        print("Loading examples...")
+        all_examples = []
+        for example_file in options["examples"]:
+            examples = load_solutions(example_file, options)
+            all_examples.extend(examples)
+
+        # Filter examples with non-empty solutions
+        options["examples"] = [
+            example for example in all_examples if len(example["solution"]) > 0
+    ]
+#############################################################################################################################
+
     if type(options["examples"]) is str:
         print("Loading examples...")
         examples = load_solutions(options["examples"], options)
         options["examples"] = [
             example for example in examples if len(example["solution"]) > 0
         ]
+
 
     if options.get("example_selector", "") in ["knn", "svm"]:
         examples_tensor = (
@@ -124,8 +139,8 @@ def solve(options, problem, add=None, switch=0):
     name = f"{options['name']}/{options['order']}"
     model = options.get("model", "gpt-4-1106-preview")
     set_order(problem, options["order"])
-    # print(f"Problem Before: {problem}")
-    # print("Options Before: ", options)
+    print(f"Problem Before################################################: {problem}")
+    print("Options Before#################################################: ", options)
 
 
     for retry in range(options.get("max_retry", 3)):
@@ -220,7 +235,7 @@ def solve(options, problem, add=None, switch=0):
             examples=selected_examples,
             assessments=assessments,
         )
-
+        print("prompt ###############################3PROMPT!!!!!!!!!!!!!!!", prompt)
         ###############################
         #@amrin: I have added the following code block to add LEAP principles/insights to the prompt based on the switch variable
         if switch == 1:
@@ -316,37 +331,39 @@ def solve(options, problem, add=None, switch=0):
         output["answer"] = None
 
     problem["expt"][name] = output
-
+    print("PROBLEM AFTER ......................................................", problem)
     ###############################################################################################################                              
     #BEWARE: THE FOLLOWING CODE BLOCK IS A MODIFIED VERSION OF THE ORIGINAL CODE BLOCK IN THE MMLU EXPERIMENT.PY
     #@amrin: I have added the following code block to save the results to medical record library and experience base separately
     ############# EXPERIENCE BASE #############   
-    if switch ==1:
-        if problem['correct_answer']==output['answer']: #is there another way to check?
-            save_problem(
-                str(mmlu_generations_dir / f"expt" / f"{options['name']}" / "experience"),
-                options["problems"],
-            ) 
-            experience+=1
-        else:
-            print("Consulation not successful. Please try again.")
-    #####################MEDICAL RECORD LIBRARY#####################  
-    elif switch ==0:
+    if switch ==0:
         if problem['correct_answer']==output['answer']: #is there another way to check?
             save_problem(
                 str(mmlu_generations_dir / f"expt" / f"{options['name']}" / "result"),
                 options["problems"],
-            )  # save results regularly
+            ) 
             record+=1
-        
+            
         else:
             #reflection phase
-            reflect_phase(options, problem, output, model)
-
+            reflect_phase(options, problem, output, model) 
+    #####################MEDICAL RECORD LIBRARY#####################  
+    elif switch ==1:
+        if problem['correct_answer']==output['answer']: #is there another way to check?
+            save_problem(
+                str(mmlu_generations_dir / f"expt" / f"{options['name']}" / "experience"),
+                options["problems"],
+            )  # save results regularly
+            experience+=1
+        
+        else:
+            #ABORT
+            print("Consultation not successful.")
+        switch=0
     ################################################################################################################
 
 def reflect_phase(options, problem, output, model):
-    switch = 0
+    switch = 1
 
     correct_reasoning = {
         "A": "To diagnose appendicitis consider the following criteria: General symptoms usually include pain around the naval that shifts to the right lower quadrant (RLQ) of the abdomen, accompanied by fever and nausea or vomiting. During a physical examination, a patient might show RLQ tenderness, positive rebound tenderness, or signs of peritonitis. Laboratory tests may reveal signs of an inflammatory response, such as an elevated white blood cell count and elevated C-reactive protein levels. Imaging may disclose an enlarged appendix or possibly an appendicolith.",
@@ -374,7 +391,6 @@ def reflect_phase(options, problem, output, model):
 
     if response["success"]:
         add = response["text"]
-        switch = 1
         solve(options, problem, add, switch)
 
 
