@@ -1,20 +1,6 @@
 # promptbase
 
 `promptbase` is an evolving collection of resources, best practices, and example scripts for eliciting the best performance from foundation models like `GPT-4`. We currently host scripts demonstrating the [`Medprompt` methodology](https://arxiv.org/abs/2311.16452), including examples of how we further extended this collection of prompting techniques ("`Medprompt+`") into non-medical domains: 
-
-| Benchmark | GPT-4 Prompt | GPT-4 Results | Gemini Ultra Results |
-| ---- | ------- | ------- | ---- |
-| MMLU | Medprompt+ | 90.10% | 90.04% |
-| GSM8K | Zero-shot | 95.3% | 94.4% |
-| MATH | Zero-shot | 68.4% | 53.2% |
-| HumanEval | Zero-shot | 87.8% | 74.4% |
-| BIG-Bench-Hard | Few-shot + CoT | 89.0% | 83.6% |
-| DROP | Zero-shot + CoT | 83.7% | 82.4% |
-| HellaSwag | 10-shot | 95.3% | 87.8% |
-
-
-In the near future, `promptbase` will also offer further case studies and structured interviews around the scientific process we take behind prompt engineering. We'll also offer specialized deep dives into specialized tooling that accentuates the prompt engineering process. Stay tuned!
-
 ## `Medprompt` and The Power of Prompting
 
 <details>
