@@ -1,14 +1,14 @@
 import traceback
 from functools import partial
 import re
-from .globals import record, experience
+
 import torch
 
 from .problem_utils import *
 from .utils import openai_configs, run_batch_jobs, text_completion
 
 from .mmlu_paths import mmlu_generations_dir
-
+from .globals import record, experience
 
 def prepare_options(options):
     # Set experiment name
@@ -65,9 +65,15 @@ def prepare_options(options):
     if "examples" not in options:
         options["examples"] = []
 
-############################### NEEDS TO BE ABLE TO LOAD PROBLEMS FROM A LIST OF FILES################################
-    if isinstance(options["examples"], list):
+    if type(options["examples"]) is str:
         print("Loading examples...")
+        examples = load_solutions(options["examples"], options)
+        options["examples"] = [
+            example for example in examples if len(example["solution"]) > 0
+        ]
+    ############################### NEEDS TO BE ABLE TO LOAD PROBLEMS FROM A LIST OF FILES################################
+    """elif isinstance(options["examples"], list):
+        print("Loading examples as list...")
         all_examples = []
         for example_file in options["examples"]:
             examples = load_solutions(example_file, options)
@@ -76,15 +82,8 @@ def prepare_options(options):
         # Filter examples with non-empty solutions
         options["examples"] = [
             example for example in all_examples if len(example["solution"]) > 0
-    ]
+    ]"""
 #############################################################################################################################
-
-    if type(options["examples"]) is str:
-        print("Loading examples...")
-        examples = load_solutions(options["examples"], options)
-        options["examples"] = [
-            example for example in examples if len(example["solution"]) > 0
-        ]
 
 
     if options.get("example_selector", "") in ["knn", "svm"]:
@@ -342,7 +341,7 @@ def solve(options, problem, add=None, switch=0):
                 str(mmlu_generations_dir / f"expt" / f"{options['name']}" / "result"),
                 options["problems"],
             ) 
-            record+=1
+            record = record + 1
             
         else:
             #reflection phase
@@ -354,7 +353,7 @@ def solve(options, problem, add=None, switch=0):
                 str(mmlu_generations_dir / f"expt" / f"{options['name']}" / "experience"),
                 options["problems"],
             )  # save results regularly
-            experience+=1
+            experience = experience + 1
         
         else:
             #ABORT
@@ -396,6 +395,7 @@ def reflect_phase(options, problem, output, model):
 
 
 def run_experiment(options):
+    
     prepare_options(options)
     try:
         used_order = ["ACDB", "ADBC", "BCDA", "CBAD", "CDAB"]
@@ -408,23 +408,22 @@ def run_experiment(options):
             options["order"] = order
 
             #####################CONVERT TO ONE-BY-ONE#####################
-            # run_batch_jobs(
-            #     partial(solve, options),
-            #     options["problems"],
-            #     max_thread=options.get("max_thread", 30),
-            # )
-            for problem in options["problems"]:
-                solve(options, problem)
+            run_batch_jobs(
+                partial(solve, options),
+                options["problems"],
+                max_thread=options.get("max_thread", 30),
+            )
+            ################################################################
 
-            summary = compute_statistics(options["problems"])
-            if options.get("verbose", True):
-                print(summary)
+            # summary = compute_statistics(options["problems"])
+            # if options.get("verbose", True):
+            #     print(summary)
             
             
 
-        with open("summary.md", "a") as f:
-            f.write(summary)
-            f.write(f"\n{'=' * 80}\n")
+        # with open("summary.md", "a") as f:
+        #     f.write(summary)
+        #     f.write(f"\n{'=' * 80}\n")
     except KeyboardInterrupt:
         quit()
     except:
