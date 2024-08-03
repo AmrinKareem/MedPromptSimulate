@@ -1,4 +1,4 @@
-# Medical promptbase susing MIMIC-Ext Abdomen Data
+# Medical promptbase using MIMIC-Ext Abdomen Data
 
 `promptbase` is an evolving collection of resources, best practices, and example scripts for eliciting the best performance from foundation models like `GPT-4`. We currently host scripts demonstrating the [`Medprompt` methodology](https://arxiv.org/abs/2311.16452), including examples of how we further extended this collection of prompting techniques ("`Medprompt+`") into non-medical domains: 
 
