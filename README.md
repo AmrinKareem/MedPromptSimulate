@@ -15,7 +15,7 @@ Before running the tests, you will need to download the datasets from the origin
 -src  
 |--promptbase  
      |----datasets   
-          |--------mmlu  
+          |------mmlu  
                |--------train  
                |--------test
 
