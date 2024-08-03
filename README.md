@@ -15,9 +15,9 @@ Before running the tests, you will need to download the datasets from the origin
 -src  
 |--promptbase  
      |----datasets   
-          |----mmlu  
-               |----train  
-               |----test
+          |--------mmlu  
+               |--------train  
+               |--------test
 
 After downloading datasets and installing the promptbase package, you can run a test with:
  - Run with `python -m promptbase mmlu --subject <SUBJECT>` where `<SUBJECT>` is abdom, our new dataset.
