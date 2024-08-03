@@ -11,11 +11,11 @@ cd src
 pip install -e .
 ```
 Before running the tests, you will need to download the datasets from the original sources (s3://hyperpod-input-datasets/AROA6GBMFKRI2VWQAUGYI:Amrin.Kareem@mbzuai.ac.ae/fil/mmlu_train_test.zip), rename it as mmlu and place it in the `src/promptbase/datasets` directory, so that the file structure is:
--src
-|--promptbase
-   |----datasets
-        |----mmlu
-             |----train
+-src 
+|--promptbase  
+   |----datasets   
+        |----mmlu  
+             |----train  
              |----test
 
 After downloading datasets and installing the promptbase package, you can run a test with:
